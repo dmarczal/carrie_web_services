@@ -5,12 +5,14 @@
 
 <% title "Progressões Geométricas em Fractais" %>
 
-<div id="fractal">
+<div id="fractal"></div>
   
-  <applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' width='710' height='540'>
-  <param name='archive' value='/fractal/jars/fractal.jar, /fractal/jars/mysql-connector-java-5.0.8-bin.jar, /fractal/jars/balloontip-1.1.1.jar, /fractal/jars/db4o-7.12.156.14667-all-java5.jar' >
-    <param name="user[email]"  value="<%= current_user.email %>" >
-    <param name="user[id]"  value="<%= current_user.id %>" >
-    </applet>
+<script type="text/javascript">  
 
-</div>
+ document.getElementById("fractal").innerHTML = "<applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' width='710' height='540'> "
+  + "<param name='archive' value='/jars/fractal.jar, /jars/mysql-connector-java-5.0.8-bin.jar, /jars/balloontip-1.1.1.jar, /jars/db4o-7.12.156.14667-all-java5.jar,  /jars/xmlsec-2.0.jar, /jars/simple-xml-2.4.1.jar ' >" +
+  "<param name='user[email]'  value='<%= current_user.email %>' > " +
+  "<param name='user[id]'  value='<%= current_user.id %>' > " +
+ "</applet>";
+
+</script>

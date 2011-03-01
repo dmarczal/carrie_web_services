@@ -1,12 +1,12 @@
 db/schema.rb
+db/database.yml
 tmp/*
 log/*
 .DS_Store
 config/deploy.rb
 *.sqlite3
 public/assets/*
-
-
+*.sw
 
 
 
