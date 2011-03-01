@@ -1,0 +1,21 @@
+one:
+  object: 
+  exercise: MyString
+  oa: MyString
+  description: MyText
+  aswer: MyString
+  correct_answer: MyString
+  title: MyString
+  user: 
+  cell: MyString
+
+two:
+  object: 
+  exercise: MyString
+  oa: MyString
+  description: MyText
+  aswer: MyString
+  correct_answer: MyString
+  title: MyString
+  user: 
+  cell: MyString
