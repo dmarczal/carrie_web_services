@@ -48,5 +48,6 @@ CarrieWebServices::Application.configure do
   config.active_support.deprecation = :notify
   
   config.action_mailer.default_url_options = { :host => 'educacional.c3sl.ufpr.br/site' }
-
+ 
+  config.serve_static_assets = true
 end

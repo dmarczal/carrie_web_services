@@ -15,10 +15,6 @@ class MistakesController < ApplicationController
     end
   end
 
-  def new
-    @mistake = User.find(params[:user_id]).mistakes.new
-  end
-
   def create
     @mistake = User.find(params[:user_id]).mistakes.new(params[:mistake])
     respond_to do |format|

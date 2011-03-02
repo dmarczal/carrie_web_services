@@ -9,6 +9,7 @@ xml.mistakesArray do
       xml.email @mistakes.first.user.email
       xml.created_at @mistakes.first.user.created_at
     end
+
     xml.mistakes(:length => "#{@mistakes.length}")  do
 
 

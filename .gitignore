@@ -5,9 +5,8 @@ log/*
 .DS_Store
 config/deploy.rb
 *.sqlite3
-public/assets/*
-*.sw
-
-
-
-
+*~
+.\#*
+\#**\#
+.*.sw[op]
+.sw[op]

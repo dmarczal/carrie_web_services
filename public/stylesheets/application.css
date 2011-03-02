@@ -29,7 +29,7 @@ a {
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
-  margin: 10px 0;
+  margin: 10px 20px;
 }
 
 #flash_notice {
@@ -73,9 +73,93 @@ a {
 .error_messages ul {
   margin: 0;
 }
+/***************************************/
+
+.field_with_errors {
+  display: inline;
+  background-color: #fbe3e4;
+  color: red;
+  border-color: #fbc2c4;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#error_explanation ul {
+  margin: 2px 24px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+/***************************************/
+#main {
+  border: solid 1px #89c0dc;
+}
+
+#yield {
+  padding: 0 3px;
+}
 
 #fractal {
   text-align: center;
   border: 5px solid #3593c3;
   width: 710px;
+  margin: 0 auto;
+}
+
+#title {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+#user_nav{
+  background-color: #c8defc;
+  border: solid 1px #89c0dc;
+  padding: 3px;
+  text-align: right;
+  font-size: small;
+}
+
+#rodape {
+  background: #c8defc;
+  width: 100%;
+  height: 20px;
+  bottom: 0;
+  border: solid 1px #89c0dc;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+#rodape p {
+  margin: 0;
+  font-weight: bold;
+  color: gray;
 }

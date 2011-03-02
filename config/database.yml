@@ -19,7 +19,7 @@ production:
   encoding: utf8
   adapter: mysql
   database: carrie
-  username: 
+  username: root
   password: 
   host: 127.0.0.1
   timeout: 5000

@@ -9,20 +9,38 @@
   </head>
   <body>
     <div id="container">
-      <div id="user_nav">
-        <% if user_signed_in? %>
-          Signed in as <%= current_user.email %>. Not you?
-          <%= link_to "Sign out", destroy_user_session_path %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
-      </div>
+      <div id="main">
+        <div id="user_nav">
+          <span style="float:left;">
+            <%= link_to "Página Incial", root_url %>
+            <% if user_signed_in? %>
+              <%= link_to "Simulador de Fractal", home_fractal_url %>
+            <% end %>
+          </span>
+          <span>
+            <% if user_signed_in? %>
+              Logado como <%= current_user.email %>. Not you?
+              <%= link_to "Sair", destroy_user_session_path %>
+            <% else %>
+              <%= link_to "Registrar-se", new_user_registration_path %> or <%= link_to "Entrar", new_user_session_path %>
+            <% end %>
+          </span>
+        </div>
 
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+        <div id="title">
+          <%= content_tag :h1, yield(:title) if show_title? %>
+        </div>
+        <div id="yield">
+          <%= yield %>
+        </div>
+        <div id="rodape">
+          <p>&copy; Projeto - Simuladores - UFPR, todos os direitos reservados. <a
+              href="http://www.c3sl.ufpr.br">UFPR</a>.<br /></p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

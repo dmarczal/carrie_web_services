@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  
+  before_filter :authenticate_user, :except => [:new, :create]
+
   def index
     @users = User.excludes(:id => current_user.id)
   end
@@ -10,7 +13,7 @@ class UserController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Successfully created User." 
+      flash[:notice] = "Usuario cadastrado com sucesso." 
       redirect_to root_path
     else
       render :action => 'new'
@@ -26,7 +29,7 @@ class UserController < ApplicationController
     params[:user].delete(:password) if params[:user][:password].blank?
     params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated User."
+      flash[:notice] = "Usuario atualizado com sucesso."
       redirect_to root_path
     else
       render :action => 'edit'
@@ -36,7 +39,7 @@ class UserController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:notice] = "Successfully deleted User."
+      flash[:notice] = "Usuario removido com sucesso."
       redirect_to root_path
     end
   end
