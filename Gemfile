@@ -9,7 +9,7 @@ gem "nifty-generators", :group => :development
 
 gem 'devise'
 gem 'sqlite3'
-gem 'mysql'
+gem 'mysql2'
 gem "jquery-rails"
 
 # Use unicorn as the web server
