@@ -1,7 +1,7 @@
 class CreateMistakes < ActiveRecord::Migration
   def self.up
     create_table :mistakes do |t|
-      t.binary :object
+      t.binary :object, :limit => 10.megabyte
       t.string :exercise
       t.string :oa
       t.text :description

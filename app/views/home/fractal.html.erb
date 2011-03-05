@@ -4,35 +4,43 @@
   <meta http-equiv="pragma" content="no-cache" />
  <% end %>
 <% javascript "deployJava"  %>
-
 <% title "Progressões Geométricas em Fractais" %>
-<div class="center">
-  <div id="fractal"></div>
-</div>  
-<script type="text/javascript">  
-  
-  if (deployJava.versionCheck('1.6.0_10+') == false) {                   
-        userInput = confirm("You need the latest Java(TM) Runtime Environment. Would you like to update now?");        
-        if (userInput == true) {  
-    
-            // Set deployJava.returnPage to make sure user comes back to 
-            // your web site after installing the JRE
-            deployJava.returnPage = location.href;
-            
-            // install latest JRE or redirect user to another page to get JRE from.
-            if(confirm('A versão plugin do Java é incompativél! \nVocê está usando um laptop UCA?')){
-            	window.location = "/fractal/uca.html"
-            }else
-            	deployJava.installLatestJRE(); 
-        }
-    }
-  
+
+<div class="block" id="block-text">
+  <div class="content">
+    <div class="inner">
+      <h1>Progressões Geométricas com Fractais</h1>
+      <div id="fractal"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"> 
+  checkJavaVersion();
+
   var time = new Date().getTime();
 
-  $("fractal").innerHTML = "<applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' width='710' height='540'> "
-  + "<param name='archive' value='/jars/fractal.jar?"+ time +", /jars/mysql-connector-java-5.0.8-bin.jar?"+ time +", /jars/balloontip-1.1.1.jar?"+ time +", /jars/db4o-7.12.156.14667-all-java5.jar?"+ time +",  /jars/xmlsec-2.0.jar?"+ time +", /jars/simple-xml-2.4.1.jar?"+ time +"' >" +
-  "<param name='user[email]'  value='<%= current_user.email %>' > " +
-  "<param name='user[id]'  value='<%= current_user.id %>' > " +
-  "</applet>";
+  $("#fractal").html( 
+  "<applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' width='710' height='540'> " +
+    "<param name='archive' value='/fractal/jars/fractal.jar?"+ time +
+    ", /fractal/jars/balloontip-1.1.1.jar?"+ time +
+    ", /fractal/jars/xmlsec-2.0.jar?"+ time +
+    ", /fractal/jars/simple-xml-2.4.1.jar?"+ time +"' >" +
+    
+    "<param name='user[email]'  value='<%= current_user.email %>' > " +
+    "<param name='user[id]'  value='<%= current_user.id %>' > " +
+  "</applet>");
 
+//  $("#fractal").innerHTML = 
+//  "<applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' width='710' height='540'> " +
+//    "<param name='archive' value='/jars/fractal.jar?"+ time +
+//    ", /jars/mysql-connector-java-5.0.8-bin.jar?"+ time +
+//    ", /jars/balloontip-1.1.1.jar?"+ time +
+//    ", /jars/db4o-7.12.156.14667-all-java5.jar?"+ time +
+//    ", /jars/xmlsec-2.0.jar?"+ time +
+//    ", /jars/simple-xml-2.4.1.jar?"+ time +"' >" +
+//    
+//    "<param name='user[email]'  value='<%= current_user.email %>' > " +
+//    "<param name='user[id]'  value='<%= current_user.id %>' > " +
+//  "</applet>";
 </script>

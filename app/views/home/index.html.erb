@@ -1,46 +1,16 @@
 <% title "Softwares Ensino de Matemática" %>
 
-<h1>Objetos de Aprendizagem</h1>
-<p>Neste sistema você terá acesso à Objetos de Aprendizagem para o ensino de matemática dentre eles:</p>
-<ol>
-  <li>Progressões geométricas com fractais:
-    <%- if user_signed_in? -%>
-      <p> Acesso o Simulador Clicando <%= link_to "aqui", home_fractal_path %></p>
-    <%- end -%>  
-    <p>
-      O simulador: um software inovador e de fácil utilização
-      <ul>
-        <li>Ojetivos:
-          <ul>
-            <li>Motivar os alunos em relação ao conceito de fractais;</li>
-            <li>Proporcionar ao aluno a oportunidade de identificar vários relacionamentos matemáticos associados ao Fractal</li>
-            <li>Permitir ao aluno descobrir as propriedades e o comportamento das progressões geométricas associadas a aos fractais vistos;</li>
-          </ul>
-        </li>
-        <br />
-        <li>Requisitos técnicos:
-          <p>É necessário que os computadores do laboratório tenham:</p>
-          <ul>
-            <li>conexão com a Internet (qualquer velocidade);</li>
-            <li>qualquer Sistema Operacional (exemplos: Ubuntu Linux, Kurumin Linux, Debian
-              Linux, Windows 98, Windows XP, Windows Vista, etc) instalado; </li>
-            <li>Qualquer Navegador Web (Web browser) que suporte Java (exemplos:Mozilla Firefox, Epiphany, Opera, Internet Explorer, etc) instalado;</li>
-            <li>Java JRE 1.6 instalado.</li>
-          </ul>
-        </li>
-      </ul>
-    </p>
-  </li>
-</ol>
-
-<%- unless user_signed_in? -%>
-  <div>
-    <h3 id="heading">Para Utilizar o Sistema</h3>
-    <p>
-      Para utilizar o sistema você deve logar <%= link_to "clicando aqui", new_user_session_path %>
-  </p>
-  <p>
-    Caso não possua usuário e senha cadastre-se <%= link_to "clicando aqui", new_user_registration_path %>
-</p>
+<div class="block" id="block-text">
+  <div class="content">
+    <div class="inner">
+      <h1>Objetos de Aprendizagem</h1>
+      <p>Neste sistema Objetos de Aprendizagem para o ensino de matemática</p>
+      <% if user_signed_in? %>
+        <p>No momento, somente o simulador de fractais está ativo,
+          acesse ele através do menu ao lado direito!</p>
+      <% elsif %>
+        <p>Para acessá-los por favor registre-se</p>  
+      <% end %>
+    </div>
+  </div>
 </div>
-<%- end -%>
