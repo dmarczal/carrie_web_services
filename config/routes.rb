@@ -19,6 +19,7 @@ CarrieWebServices::Application.routes.draw do
 
   get "home/index"
   get "home/fractal"
+  get "home/problem_solve"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

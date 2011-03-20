@@ -1,0 +1,22 @@
+<%=  %>
+
+<script type="text/javascript"> 
+  checkJavaVersion();
+
+  var time = new Date().getTime();
+
+  alert( $("#block-text").width() - 10);
+
+  $("#fractal").html( 
+      "<applet code='org.c3sl.ufpr.br.main.Fractal.class' mayscript='mayscript' " +
+      "width='"+ ($("#block-text").width() - 40) +"' height='540'> " +
+      "<param name='archive' value='/fractal/jars/fractal<%= params[:proxy] %>.jar?"+ time +
+      ", <%= params[:env] %>/fractal/jars/balloontip-1.1.1.jar?"+ time +
+      ", <%= params[:env] %>/fractal/jars/xmlsec-2.0.jar?"+ time +
+      ", <%= params[:env] %>/fractal/jars/simple-xml-2.4.1.jar?"+ time +
+      ", <%= params[:env] %>/fractal/jars/commons-io-2.0.1.jar?"+ time +"' >" +
+
+      "<param name='user[email]'  value='<%= current_user.email %>' > " +
+      "<param name='user[id]'  value='<%= current_user.id %>' > " +
+      "</applet>");
+</script>

@@ -1,0 +1,29 @@
+<div id="sidebar">
+  <% if user_signed_in? %>
+    <div class="block">
+      <h3>Simuladores</h3>
+      <ul class="navigation">
+        <li><%= link_to "PG com Fractais", home_fractal_path(:proxy => nil) %></li>
+        <li><%= link_to "PG com Fractais ( com detecção de proxy )", home_fractal_path(:proxy => "proxy") %></li>
+        <li class="last"><a href="#" onclick="return false;">Funções Lineares</a></li>
+        <li><a href="#" onclick="return false;">Matemática Financeira</a></li>
+        <li><a href="#" onclick="return false;">Funções Cíclicas</a></li>
+        <li><%= link_to "Resoluções de problemas", home_problem_solve_path %></li>
+      </ul>          
+    </div>
+  <% end %>
+  <div class="block">
+    <h3>Requisitos técnicos</h3>
+    <div class="sidebar-block">
+      <p>Para executar os simuladores é necessário que o computadore tenha:</p>
+      <ul class="list">
+        <li>Conexão com a Internet (qualquer velocidade);</li><br />
+        <li>qualquer Sistema Operacional (exemplos: Ubuntu Linux, Kurumin Linux, Debian
+          Linux, Windows 98, Windows XP, Windows Vista, etc) instalado; </li><br />
+        <li>Qualquer Navegador Web (Web browser) que suporte Java (exemplos:Mozilla Firefox, Epiphany, Opera, Internet Explorer, etc) instalado;</li><br />
+        <li>Java JRE 1.6 instalado.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+

@@ -96,9 +96,18 @@ h4 {
    		
    		<ol>
 			<li>Abra o terminal:<p>Para isso, clique em metasys -> Aba Favoritos -> Terminal</p></li>
-			<li>No terminal copie e cole o seguinte comando: <p>sudo ln -sf /usr/java/jre1.6.0_10/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/browser-plugins/libjavaplugin.so</p></li>
-			<li>Quando pedir a senha, a senha digite: metasys</li>
-		</ol>
+                        <li>No terminal copie e cole o seguinte comando: 
+                             <ol>
+                                        <li>cd /usr/local</li>
+                                        <li>sudo wget http://educacional.c3sl.ufpr.br/java/jre-6u24-linux-i586.bin</li>
+                                        <li>sudo chmod +x jre-6u24-linux-i586.bin</li>
+                                        <li>sudo ./jre-6u24-linux-i586.bin</li>
+                                        <li>sudo rm jre-6u24-linux-i586.bin</li>
+                                        <li>sudo ln -sf /usr/java/jre1.6.0_24/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/browser-plugins/libjavaplugin_oji.so</li>
+                                </ol>
+ 
+                        <li>Quando pedir a senha, digite: metasys</li>
+                        </ol>
    		<div><a href="educaciona.c3sl.ufpr.br/simulators/home/fractal">Voltar ao Software</div>
    	</div>
    </div>

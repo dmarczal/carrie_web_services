@@ -11,7 +11,7 @@
 
 function checkJavaVersion(){
 
-  if (deployJava.versionCheck('1.6.0_01+') == false) {                   
+  if (deployJava.versionCheck('1.6.0_11+') == false) {                   
     userInput = confirm("You need the latest Java(TM) Runtime Environment. Would you like to update now?");        
     if (userInput == true) {  
       // Set deployJava.returnPage to make sure user comes back to 

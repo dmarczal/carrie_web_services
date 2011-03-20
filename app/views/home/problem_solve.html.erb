@@ -1,0 +1,89 @@
+<% title "Resolução de problemas" %>
+
+<div class="block" id="block-text">
+  <div class="content">
+    <div class="inner">
+      <h1>Usuários dos laptops UCA</h1>
+
+      <p>
+        A versão do plugin Java usada pelo seu navegador é incompatível com este programa,
+        por favor siga as instruções abaixo para atualizar o plugin do Java
+      </p>
+
+      <ol>
+        <li>Abra o terminal:<p>Para isso, clique em metasys -> Aba Favoritos -> Terminal</p></li>
+        <li>No terminal copie e cole os seguintes comandos: 
+          <ol>
+            <li>cd /usr/local</li>
+            <li>sudo wget http://educacional.c3sl.ufpr.br/java/jre-6u24-linux-i586.bin</li>
+            <li>sudo chmod +x jre-6u24-linux-i586.bin</li>
+            <li>sudo ./jre-6u24-linux-i586.bin</li>
+            <li>sudo rm jre-6u24-linux-i586.bin</li>
+            <li>sudo ln -sf /usr/java/jre1.6.0_24/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/browser-plugins/libjavaplugin_oji.so</li>
+          </ol>
+          <li>Quando pedir a senha, digite: metasys</li>
+        </ol>
+    </div>
+  </div>
+</div>
+
+<div class="block" id="block-text">
+  <div class="content">
+    <div class="inner">
+      <h1>Usuários Linux</h1>
+
+      <p>
+        A versão do plugin Java usada pelo seu navegador é incompatível com este programa,
+        por favor siga as instruções abaixo para atualizar o plugin do Java
+      </p>
+
+      <ol>
+        <li>Abra o terminal:<p>Para isso, clique em metasys -> Aba Favoritos -> Terminal</p></li>
+        <li>No terminal copie e cole os seguintes comandos: 
+          <ol>
+            <li>cd</li>
+            <li>mkdir opt</li>
+            <li>cd opt</li>
+            <li> <p> Se seu processador for 32 bits: <br />
+                   wget http://educacional.c3sl.ufpr.br/java/jre-6u24-linux-i586.bin
+                 </p>
+                 <p>
+                   Se seu processador for 64 bits: <br />
+                   wget http://educacional.c3sl.ufpr.br/java/jre-6u24-linux-x64.bin
+                 </p>
+            </li>
+            <li>chmod +x jre-6u24-linux-i586.bin ou  chmod +x jre-6u24-linux-x64.bin </li>
+            <li>./jre-6u24-linux-i586.bin ou chmod +x jre-6u24-linux-x64.bin</li>
+            <li>rm jre-6u24-linux-i586.bin ou rm jre-6u24-linux-x64.bin</li>
+            <li>mkdir ~/.mozilla/plugins</li>
+            <li>
+              <p>Para 32 bits: <br />
+                ln -sf ~/opt/jre1.6.0_24/plugin/i386/ns7/libjavaplugin_oji.so ~/.mozilla/plugins/libjavaplugin_oji.so
+              </p>
+              <p>Para 64 bits: <br />
+                ln -sf ~/opt/jre1.6.0_24/lib/amd64/libnpjp2.so ~/.mozilla/plugins/libnpjp.so
+              </p>
+            </li>
+          </ol>
+        </ol>
+    </div>
+  </div>
+</div>
+
+<div class="block" id="block-text">
+  <div class="content">
+    <div class="inner">
+      <h1>Usuários Windows</h1>
+
+      <p>
+        A versão do plugin Java usada pelo seu navegador é incompatível com este programa,
+        por favor siga as instruções abaixo para atualizar o plugin do Java
+      </p>
+
+      <ol>
+        <li>Vá para site de <%= link_to "Download do Java", 'http://java.com/en/download/index.jsp' %></li>
+        e siga as instruções para download e atualização do Java
+      </ol>
+    </div>
+  </div>
+</div>
