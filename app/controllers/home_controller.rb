@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   
   def fractal
     params[:proxy] = params[:proxy] ? params[:proxy] : ""
-    params[:env] = Rails.env.production? ? "/simulators" : ""
+    params[:env] = Rails.env.production? ? "/matematica" : ""
   end
 
   def problem_solve
