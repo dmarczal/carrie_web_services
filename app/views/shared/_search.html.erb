@@ -1,0 +1,40 @@
+<div class="block" >
+  <div class="content">
+    <div class="inner">
+
+      <div id="filter-form">
+        <ul>
+          <li><p>Filtros:</p></li>
+          <li>
+            <div>
+              <%= form_tag eval("search_#{current_controller_name}_path"), :method => :get do -%>
+                <p>
+                  <%= text_field_tag :search, params[:search] %>
+                  <%= submit_tag "Buscar", :name => nil, :class => :submit %>
+                </p>
+              <% end %>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <ul class="drop-navigation">
+                  <%= filter_by(:user_email, @search.facet(:user_email).rows, "Usuário") %>
+                  <%= filter_by(:exercise, @search.facet(:exercise).rows, "Exercício") %>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+      <div class="filters">
+        <% if params[:search].present? || params[:user_email].present? || params[:exercise].present? %>
+          <strong>Filtrando:</strong>
+          <%= filtering(:search, :user_email, :exercise) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <div id="current_logged">
+    <%= gravatar_image_tag(current_user.email, :gravatar => {:size => 20}) %>
+    <h5>Você está logado como <%= current_user.email %></h5>
+  </div>
+<% end %>

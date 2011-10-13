@@ -1,0 +1,80 @@
+/*
+ * This css will include all web-app-theme css you need
+ *
+ *= require web-app-theme/base
+ *= require web-app-theme/themes/default/style.css
+ *= require drop-menu
+ *= require_self
+ */
+
+/* Write here your css for overriding the theme's rules */
+
+/*** FIXED PADDING WITH OL ***/
+
+#main .block .content .inner {
+  margin-left: 15px;
+}
+
+/*** Userd logged ***/
+
+#current_logged {
+  margin: 5px;
+
+  h5 {
+    float:right;
+    color: #fff;
+    margin: 3px;
+  }
+
+  img {
+    float:right;
+  }
+}
+/*** WARNING FLASH MESSAGE ***/
+
+.flash .alert {
+  border: 1px solid #BB9004;
+  background: #F9C006 url("web-app-theme/themes/default/images/messages/warning.png") no-repeat 10px center;
+}
+
+/*** PAGINATION ***/
+.pagination em.current {
+    background: none repeat scroll 0 0 #261F1F;
+    border: 1px solid #261F1F;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    margin-right: 5px;
+    min-width: 15px;
+    padding: 6px;
+    text-align: center;
+}
+
+/*** FILTERS ***/
+.filters {
+  margin-bottom: 15px;
+  clear: both;
+}
+
+.filter {
+  border: solid 1px #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background-color: #DDD;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.filter a {
+  padding-left: 5px;
+}
+
+#filter-form ul {
+  list-style:none;
+}
+
+#filter-form ul li {
+  float: left;
+  padding-left: 10px;
+}

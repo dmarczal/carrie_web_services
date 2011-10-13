@@ -1,0 +1,22 @@
+<div id="user-navigation">
+  <ul class="wat-cf" >
+    <% if user_signed_in? %>
+      <li><%= link_to "Logout", destroy_user_session_path, :class =>"logout" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="main-navigation">
+  <ul class="wat-cf">
+    <li><%= link_to "Página Inicial", root_url %></li>
+    <% if !user_signed_in? %>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Registrar-se", new_user_registration_path %></li>
+    <% else %>
+      <% if can? :search, :answers %>
+        <li><%= link_to "Erros", search_mistakes_path %></li>
+        <li><%= link_to "Acertos", search_hits_path %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

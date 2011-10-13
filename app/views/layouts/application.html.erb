@@ -1,63 +1,41 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "base", "themes/blue/style" %>
-    <%= javascript_include_tag :defaults %>
-    <%= csrf_meta_tag %>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <%= yield(:head) %>    
-  </head>
-  <body>
-    <div id="container">
-      <div id="header">
-        <h1> <%= link_to "Simuladores Matemáticos", root_url %> </h1>
-        <div id="user-navigation">
-          <ul>
-            <% if user_signed_in? %>
-              <li><%= link_to "Logout", destroy_user_session_path %></li>
-            <% end %>
-          </ul>
-          <div class="clear"></div>
-        </div>
-        <div id="main-navigation">
-          <div>
-            <ul class="tabs">
-              <li><%= link_to "Página Inicial", root_url %></li>
-              <% if !user_signed_in? %>
-                <li><%= link_to "Login", new_user_session_path %></li>
-                <li><%= link_to "Registrar-se", new_user_registration_path %></li>
-              <% end %>
-            </ul>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <%= stylesheet_link_tag 'web_app_theme' %>
+  <%= javascript_include_tag "application" %>
+  <%= mathjax_tag %>
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1> <%= link_to "Simuladores Matemáticos", root_url %> </h1>
+      <%= render 'shared/current_logged' %>
+      <%= render 'shared/navigation' %>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
           </div>
-          <div class="clear"></div>
-        </div>
-      </div>    
-
-      <!-- <%= content_tag :h1, yield(:title) if show_title? %> -->
-
-      <div id="wrapper">
-        <div id="main" >  
-
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, content_tag(:p, msg), :id => "flash_#{name}" %>
-          <% end %>
-
-          <%= yield %>
-
-
-          <div id="footer">
-            <div class="block">
-              <p>
-                Projeto de software educacional livre da <a href="http://www.c3sl.ufpr.br">UFPR</a></p>
-            </div>      
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Projeto de software educacional livre da <a href="http://www.c3sl.ufpr.br">UFPR</a></p>
+            <p>Copyright &copy; <%= Time.now.year %> Web App.</p>
           </div>
-
         </div>
-
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
         <%= render :partial => 'shared/right_sidebar' %>
-        <div class="clear"></div>      
-      </div>    
+      </div>
     </div>
   </div>
 </body>

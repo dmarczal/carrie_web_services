@@ -1,5 +1,10 @@
 class MistakesController < ApplicationController
-  before_filter :load_user #:authenticate_user!
+  before_filter :load_user, :except => [:search] #:authenticate_user!
+
+  def search
+    @mistakes = searchable(Mistake).results
+    authorize! :search, :answers
+  end
 
   def index
     @mistakes = @user.mistakes #TODO: where(:oa => params[:oa])
@@ -28,7 +33,7 @@ class MistakesController < ApplicationController
     end
   end
 
-  private 
+  private
   def load_user
     @user = User.find(params[:user_id])
   end

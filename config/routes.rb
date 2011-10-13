@@ -1,10 +1,10 @@
 CarrieWebServices::Application.routes.draw do
 
   #resources :mistakes
-  # :path_names => {:sign_up => "register"} 
-    
-  devise_for :users 
-  
+  mathjax 'mathjax'
+
+  devise_for :users
+
   resources :users do
     resources :mistakes do
       resources :retroactions
@@ -16,6 +16,9 @@ CarrieWebServices::Application.routes.draw do
   #  get '/login' => 'devise/sessions#new'
   #  get '/logout' => 'devise/sessions#destroy'
   #end
+
+  match "search_mistakes" => "mistakes#search"
+  match "search_hits" => "hits#search"
 
   get "home/index"
   get "home/fractal"

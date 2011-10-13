@@ -8,7 +8,6 @@ pt-BR:
         one: '1 erro impediu que %{model} fosse gravado:'
         other: '%{count} erros impediram que %{model} fosse gravado:'
 
-
   devise:
     failure:
       unauthenticated: 'Para continuar, faça login ou registre-se.'

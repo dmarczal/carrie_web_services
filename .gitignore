@@ -10,3 +10,4 @@ config/deploy.rb
 \#**\#
 .*.sw[op]
 .sw[op]
+.sass-cache/

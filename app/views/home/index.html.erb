@@ -9,8 +9,12 @@
         <p>No momento, somente o simulador de fractais está ativo,
           acesse ele através do menu ao lado direito!</p>
       <% elsif %>
-        <p>Para acessá-los por favor registre-se</p>  
+        <p>Para acessá-los por favor registre-se</p>
       <% end %>
     </div>
   </div>
 </div>
+
+<% if @mistakes %>
+  <%= render :partial => 'shared/table', :locals => {:answers => @mistakes, :table_title => "Últimos 10 erros" } %>
+<% end %>

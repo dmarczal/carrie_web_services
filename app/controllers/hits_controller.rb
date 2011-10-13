@@ -1,5 +1,10 @@
 class HitsController < ApplicationController
-  before_filter :load_user
+  before_filter :load_user, :except => [:search]
+
+  def search
+    @hits = searchable(Hit).results
+    authorize! :search, :answers
+  end
 
   def index
     @hits = @user.hits.all

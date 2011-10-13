@@ -1,10 +1,20 @@
 # SQLite version 3.x
 #   gem install sqlite3
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: carrie_production
   pool: 5
-  timeout: 5000
+  username: root
+  password:
+  host: 127.0.0.1
+
+#development:
+#  adapter: sqlite3
+#  database: db/development.sqlite3
+#  pool: 5
+#  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,13 +25,6 @@ test:
   pool: 5
   timeout: 5000
 
-
-#production:
-#  adapter: sqlite3
-#  database: db/production.sqlite3
-#  pool: 5
-#  timeout: 5000
-
 production:
   adapter: mysql2
   encoding: utf8
@@ -29,5 +32,5 @@ production:
   database: carrie_production
   pool: 5
   username: root
-  password: 
-  host: 127.0.0.1	
+  password:
+  host: 127.0.0.1

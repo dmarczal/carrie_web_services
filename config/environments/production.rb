@@ -46,8 +46,17 @@ CarrieWebServices::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
-  config.action_mailer.default_url_options = { :host => 'educacional.c3sl.ufpr.br/site' }
- 
+
+  config.action_mailer.default_url_options = { :host => 'educacional.c3sl.ufpr.br/matematica' }
+
   config.serve_static_assets = true
+
+  # Compress JavaScripts and CSS
+  config.assets.compress = true
+
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate digests for assets URLs
+  config.assets.digest = true
 end

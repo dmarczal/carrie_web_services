@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,7 +10,30 @@ gem "nifty-generators", :group => :development
 gem 'devise'
 gem 'sqlite3'
 gem 'mysql2'
-gem "jquery-rails"
+
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
+gem "therubyracer", :require => 'v8'
+
+gem 'web-app-theme', '~> 0.8.0'
+
+gem 'mathjax-rails'
+gem 'math_engine', '~> 0.3.0', :git => 'git@github.com:dmarczal/math_engine.git'
+
+gem 'sunspot_rails', '1.2.1'
+gem 'will_paginate', '> 3.0'
+gem 'gravatar_image_tag'
+
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,4 +57,4 @@ gem "jquery-rails"
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "mocha", :group => :test
+#gem "mocha", :group => :test
