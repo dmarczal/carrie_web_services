@@ -17,6 +17,7 @@ pt-BR:
       invalid_token: 'O token de autenticação não é válido.'
       timeout: 'A sua sessão expirou, por favor faça login novamente para poder continuar.'
       inactive: 'A sua conta ainda não foi ativada.'
+      already_authenticated: 'Você já foi autenticado'
     sessions:
       signed_in: 'Fez login com sucesso.'
       signed_out: 'Fez logout com sucesso.'

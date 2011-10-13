@@ -1,4 +1,4 @@
-xml.instruct!  
+xml.instruct!
 
 @hits.each do |hit|
   xml.hit do

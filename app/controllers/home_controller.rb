@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
     if can? :read, :mistakes
-      @mistakes = Mistake.last 10
+      @mistakes = Mistake.find(:all, :order => 'created_at DESC', :limit => 10)
     end
   end
 

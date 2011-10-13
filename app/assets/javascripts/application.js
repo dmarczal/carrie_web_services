@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require_self
 //= require_tree .
+//= require_self
 
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
@@ -13,6 +13,14 @@
 //      return false;
 //      });
 //});
+
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
 
 function checkJavaVersion(){
 

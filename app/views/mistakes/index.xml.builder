@@ -1,4 +1,4 @@
-xml.instruct!  
+xml.instruct!
 
 xml.mistakesArray do
 
@@ -13,7 +13,7 @@ xml.mistakesArray do
     xml.mistakes(:length => "#{@mistakes.length}")  do
 
 
-      for mistake in @mistakes do   
+      for mistake in @mistakes do
         xml.mistake do
           xml.id mistake.id
           xml.created_at mistake.created_at
@@ -27,7 +27,7 @@ xml.mistakesArray do
           xml.cell mistake.cell
           xml.object mistake.object
         end
-      end  
+      end
     end
   end
 

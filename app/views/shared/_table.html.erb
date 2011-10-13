@@ -21,7 +21,7 @@
           <td> <%= answer.cell %> </td>
           <td> <%= math(answer.answer) %> </td>
           <td> <%= math(answer.correct_answer) %> </td>
-          <td> <%= l(answer.created_at, :format => :small) %> </td>
+          <td> <%= l(answer.created_at.in_time_zone('Brasilia'), :format => :small) %> </td>
           <td> <%= answer.user.email %> </td>
           <td> <%= gravatar_image_tag(answer.user.email, :alt => answer.user.email, :gravatar => {:size => 25} ) %> </td>
         </tr>

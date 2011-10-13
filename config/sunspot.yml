@@ -1,0 +1,19 @@
+production:
+  solr:
+    hostname: localhost
+    port: 8080 #tomcat defaults to port 8080
+    #path: '/opt/solr/example'
+    log_level: WARNING
+    #pid_dir: '/var/run'
+
+development:
+  solr:
+    hostname: localhost
+    port: 8982
+    log_level: INFO
+
+test:
+  solr:
+    hostname: localhost
+    port: 8981
+    log_level: WARNING
